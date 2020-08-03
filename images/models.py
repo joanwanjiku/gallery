@@ -56,6 +56,11 @@ class Image(models.Model):
         self.save()
 
     @classmethod
+    def get_all_images(cls):
+        images = cls.objects.all()
+        return images
+        
+    @classmethod
     def delete_image(cls, img_id):
         image = cls.objects.get(pk=img_id)
         image.delete()
