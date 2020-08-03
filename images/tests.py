@@ -53,10 +53,14 @@ class ImageTestCase(TestCase):
         self.category.save_category()
 
         self.image = Image(image='all_images/sun.jpg', image_name='sun', image_desc='beautiful sun', image_loc=self.location, image_cat=self.category)
-        
+
     def tearDown(self):
         Category.objects.all().delete()
         Location.objects.all().delete()
         Image.objects.all().delete()
 
+    def test_save(self):
+        self.image.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
     
