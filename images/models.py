@@ -19,6 +19,15 @@ class Location(models.Model):
     def update_location(cls, loc_id, new_name):
         loc = cls.objects.filter(pk=loc_id).update(loc_name=new_name)
         return loc
+    
+    @classmethod
+    def get_all_locations(cls):
+        locations = cls.objects.all()
+        return locations
+
+    def find_loc_id(cls, loc_name):
+        loc = cls.objects.filter(loc_name=loc_name)
+        return loc
 
 class Category(models.Model):
     cat_name = models.CharField(max_length=100)
@@ -37,6 +46,11 @@ class Category(models.Model):
     @classmethod
     def update_category(cls, cat_id, new_name):
         cat = cls.objects.filter(pk=cat_id).update(cat_name=new_name)
+        return cat
+
+    @classmethod
+    def find_cat_id(cls, cat_name):
+        cat = cls.objects.filter(cat_name=cat_name)
         return cat
 
     
@@ -74,6 +88,7 @@ class Image(models.Model):
     def search_image_by_cat(cls, cat_id):
         images = cls.objects.filter(image_cat=cat_id)
         return images
+    
     @classmethod
     def filter_image_by_loc(cls, loc_id):
         images = cls.objects.filter(image_loc=loc_id)
