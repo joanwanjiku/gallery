@@ -34,10 +34,16 @@
                           <div class="modal-body">
                             <img src="{{image.image.url}}" style= "height:40vh; width:70%; margin: 0 auto;" alt="">
                             <p>{{image.image_desc}}</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Copy to clipboard</button>
-                          </div>
+
+                            
+                            <form class="form-inline">
+                              <input type="text" readonly class="form-control-plaintext mb-2" id="url" value="{{image.image.url}}">                         
+                                                         
+                              <button type="button" class="btn btn-outline-danger btn-sm mb-2" data-toggle="tooltip" data-placement="right" onclick='copyurl()' id = "toolTipBtn" onmouseout="outFunc()">
+                                copy
+                              </button>
+                             </form>
+                          </div>                    
                         </div>
                       </div>
                     </div>
