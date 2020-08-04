@@ -26,4 +26,3 @@ To run the application:-
 #### Author
 - Joan Wanjiku
     - joanevans18@gmail.com
-#### License
