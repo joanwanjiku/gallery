@@ -32,6 +32,7 @@ if config('MODE')=="dev":
        }
        
    }
+   
 # production
 else:
    DATABASES = {
@@ -53,12 +54,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1)rm$q^gqg3+2(de05fk9ep138tegb(=6is@%oaa7s&412z8s6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -110,16 +108,7 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gallery',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST':'localhost'
-    }
 
-}
 
 
 # Password validation
