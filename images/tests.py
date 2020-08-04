@@ -23,7 +23,9 @@ class CategoryTestClass(TestCase):
     def test_delete_method(self):
         test_category = Category(cat_name='paintings')
         test_category.save_category()
-        self.category.delete_category(pk=test_category.id)
+        test_category.delete_category(pk=test_category.id)
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) == 1)
 
 class LocationTestClass(TestCase):
     # Set up method
@@ -44,6 +46,9 @@ class LocationTestClass(TestCase):
         test_location = Location(loc_name='uganda')
         test_location.save_location()
         test_location.delete_location(pk=test_location.id)
+        locations = Location.objects.all()
+        self.assertTrue(len(locations) == 1)
+
 
 class ImageTestCase(TestCase):
     def setUp(self):
@@ -63,4 +68,6 @@ class ImageTestCase(TestCase):
         self.image.save_image()
         images = Image.objects.all()
         self.assertTrue(len(images) > 0)
+
+    
     
