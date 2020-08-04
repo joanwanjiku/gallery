@@ -2,36 +2,40 @@
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: .5em;
+    grid-gap: .3em;
     grid-template-areas: "image1 image1 image2 image4"
                           "image3 image5 image5 image4"
                           "image6 image11 image12 image8"
                           "image10 image11 image12 image14"
                           "image16 image16 image7 image9"
                           "image15 image13 image13 image17";
-}
-img{
-    width: 100%;
-    object-fit: cover;
-    height: 20vh;
-    border: 2px solid red;
 
 }
+.each-image{
+    width: 100%;
+    object-fit: cover;
+    height: 20vh;  
+    filter: brightness(0.8) grayscale(.50);
+    transition: 0.3s ease-in-out;    
+}
+.each-image:hover{
+    filter: brightness(1) grayscale(0);
+    cursor: pointer;
+}
+
 
 .image1{
    grid-area: image1; 
 }
 .image2{
     grid-area: image2; 
-
 }
 .image3{
     grid-area: image3; 
-
 }
 .image4{
     grid-area: image4; 
-
+    height: 41.2vh;
 }
 .image5{
     grid-area: image5; 
@@ -59,20 +63,18 @@ img{
 
 }
 .image11{
-    grid-area: image11; 
-
+    grid-area: image11;
+    height: 41.2vh;
 }
 .image12{
     grid-area: image12; 
-
+    height: 41.2vh;
 }
 .image13{
     grid-area: image13; 
-
 }
 .image14{
     grid-area: image14; 
-
 }
 .image15{
     grid-area: image15; 
